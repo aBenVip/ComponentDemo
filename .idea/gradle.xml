@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/httplib" />
             <option value="$PROJECT_DIR$/modulea" />
             <option value="$PROJECT_DIR$/moduleb" />
+            <option value="$PROJECT_DIR$/sharecomponent" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

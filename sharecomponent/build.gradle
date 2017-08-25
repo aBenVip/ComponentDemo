@@ -36,11 +36,10 @@ android {
             }
         }
     }
-    //防止资源命名重复，不包括图片
-    resourcePrefix "module1_b"
+    resourcePrefix "share_component"
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':baselib')
+    compile project(":baselib")
 }
