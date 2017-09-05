@@ -17,9 +17,13 @@ public class MainActivity extends AppCompatActivity {
     public void moduleA(View view) {
         ARouter.getInstance().build("/modulea/a").navigation();
     }
+
     public void moduleB(View view) {
         ARouter.getInstance().build("/moduleb/b").navigation();
     }
 
 
+    public void shareComponent(View view) {
+        ARouter.getInstance().build("/share/component").navigation();
+    }
 }

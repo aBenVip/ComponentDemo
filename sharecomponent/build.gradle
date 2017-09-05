@@ -5,17 +5,13 @@ if (IsBuildMudle.toBoolean()) {
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
-
+    rootProject.ext.setDefaultConfig android
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -36,10 +32,11 @@ android {
             }
         }
     }
-    resourcePrefix "share_component"
+    resourcePrefix "share_"
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(":baselib")
+    compile project(':baselib')
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }

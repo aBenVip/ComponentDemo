@@ -1,4 +1,4 @@
-package com.dgcredit.httplib;
+package com.dgcredit.libcomponent;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.dgcredit.httplib.test", appContext.getPackageName());
+        assertEquals("com.dgcredit.baselib.test", appContext.getPackageName());
     }
 }
