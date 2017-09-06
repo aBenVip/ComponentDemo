@@ -5,17 +5,13 @@ if (IsBuildMudle.toBoolean()) {
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
-
-    defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+    rootProject.ext.setDefaultConfig android
+    defaultConfig{
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -37,10 +33,11 @@ android {
         }
     }
     //防止资源命名重复，不包括图片
-    resourcePrefix "module1_b"
+    resourcePrefix "moduleb_"
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':baselib')
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }
