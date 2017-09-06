@@ -1,18 +1,8 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'me.tatarka.retrolambda'
 android {
 
     rootProject.ext.setDefaultConfig android
-    defaultConfig {
-        applicationId "com.dgcredit.componentdemo"
-        //ARouter配置
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
-            }
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false

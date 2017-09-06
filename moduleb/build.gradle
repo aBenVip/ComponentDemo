@@ -3,16 +3,9 @@ if (IsBuildMudle.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
-
+apply plugin: 'me.tatarka.retrolambda'
 android {
     rootProject.ext.setDefaultConfig android
-    defaultConfig{
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
-            }
-        }
-    }
     buildTypes {
         release {
             minifyEnabled false

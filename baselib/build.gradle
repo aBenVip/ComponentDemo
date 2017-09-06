@@ -1,8 +1,7 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'me.tatarka.retrolambda'
 android {
     rootProject.ext.setDefaultConfig android
-
     buildTypes {
         release {
             minifyEnabled false

@@ -1,5 +1,4 @@
 ext {
-
     android = [
             compileSdkVersion: 25,
             buildToolsVersion: "25.0.3",
@@ -17,42 +16,58 @@ ext {
     //统一配置Gradle，配置开发版本
     //rootProject.ext.setDefaultConfig android
     //defaultConfig.applicationId "YOUR PACKAGE NAME"
+
     setDefaultConfig = {
         extension ->
             extension.compileSdkVersion android.compileSdkVersion
             extension.buildToolsVersion android.buildToolsVersion
             extension.defaultConfig {
+                //当前为主工程时，自动注入applicationId
+                if (extension.project.getName().equals("app")) {
+                    applicationId "com.dgcredit.componentdemo"
+                }
                 minSdkVersion android.minSdkVersion
                 targetSdkVersion android.targetSdkVersion
                 versionCode android.versionCode
                 versionName android.versionName
                 testInstrumentationRunner dependencies.androidJUnitRunner
-
+                //ARouter配置
+                javaCompileOptions {
+                    annotationProcessorOptions {
+                        arguments = [moduleName: extension.project.getName()]
+                    }
+                }
             }
+//            extension.buildTypes {
+//                release {
+//                    minifyEnabled false
+//                    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//                    println(proguardFiles)
+//                }
+//            }
             extension.compileOptions {
-                sourceCompatibility JavaVersion.VERSION_1_7
-                targetCompatibility JavaVersion.VERSION_1_7
+                extension.compileOptions.sourceCompatibility JavaVersion.VERSION_1_8
+                extension.compileOptions.targetCompatibility JavaVersion.VERSION_1_8
             }
     }
 
     dependencies = [
             //support
-            "appcompat-v7"                 : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
-            "design"                       : "com.android.support:design:${version["androidSupportSdkVersion"]}",
-            "support-v4"                   : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
-            "cardview-v7"                  : "com.android.support:cardview-v7:${version["androidSupportSdkVersion"]}",
-            "annotations"                  : "com.android.support:support-annotations:${version["androidSupportSdkVersion"]}",
-            "recyclerview-v7"              : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
-            "constraint-layout"            : "com.android.support.constraint:constraint-layout:1.0.2",
+            "appcompat-v7"      : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
+            "design"            : "com.android.support:design:${version["androidSupportSdkVersion"]}",
+            "support-v4"        : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
+            "cardview-v7"       : "com.android.support:cardview-v7:${version["androidSupportSdkVersion"]}",
+            "annotations"       : "com.android.support:support-annotations:${version["androidSupportSdkVersion"]}",
+            "recyclerview-v7"   : "com.android.support:recyclerview-v7:${version["androidSupportSdkVersion"]}",
+            "constraint-layout" : "com.android.support.constraint:constraint-layout:1.0.2",
 
-            "arouter-api"     : "com.alibaba:arouter-api:${version["aRouterVersion"]}",
-            "arouter-compiler": "com.alibaba:arouter-compiler:${version["aRouterCompilerVersion"]}",
-
+            "arouter-api"       : "com.alibaba:arouter-api:${version["aRouterVersion"]}",
+            "arouter-compiler"  : "com.alibaba:arouter-compiler:${version["aRouterCompilerVersion"]}",
 
             //test
-            "junit"                        : "junit:junit:4.12",
-            "androidJUnitRunner"           : "android.support.test.runner.AndroidJUnitRunner",
-            "espresso"           : "com.android.support.test.espresso:espresso-core:2.2.2",
+            "junit"             : "junit:junit:4.12",
+            "androidJUnitRunner": "android.support.test.runner.AndroidJUnitRunner",
+            "espresso"          : "com.android.support.test.espresso:espresso-core:2.2.2",
             /*//support
             "appcompat-v7"                 : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
             "design"                       : "com.android.support:design:${version["androidSupportSdkVersion"]}",
