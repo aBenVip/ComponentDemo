@@ -6,27 +6,21 @@ if (IsBuildMudle.toBoolean()) {
 apply plugin: 'me.tatarka.retrolambda'
 android {
     rootProject.ext.setDefaultConfig android
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-    sourceSets {
-        main {
-            if (IsBuildMudle.toBoolean()) {
-                manifest.srcFile 'src/main/module/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-                //集成开发模式下排除debug文件夹中的所有Java文件
-                java {
-                    exclude 'debug/**'
-                }
-            }
-        }
-    }
+//    sourceSets {
+//        main {
+//            if (IsBuildMudle.toBoolean()) {
+//                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+//            } else {
+//                manifest.srcFile 'src/main/AndroidManifest.xml'
+//                //集成开发模式下排除debug文件夹中的所有Java文件
+//                java {
+//                    exclude 'debug/**'
+//                }
+//            }
+//        }
+//    }
     //防止资源命名重复，不包括图片
-    resourcePrefix "moduleb_"
+//    resourcePrefix "moduleb_"
 }
 
 dependencies {

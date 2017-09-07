@@ -1,4 +1,4 @@
-package com.dgcredit.httpcomponent;
+package com.dgcredit.httplib;
 
 import org.junit.Test;
 

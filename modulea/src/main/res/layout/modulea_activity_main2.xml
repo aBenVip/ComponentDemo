@@ -7,9 +7,13 @@
     android:orientation="vertical"
     tools:context="com.dgcredit.modulea.Main2Activity">
 
-    <TextView
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="aModule"/>
+        android:layout_height="wrap_content"
+        app:titleTextColor="#f00"
+        app:title="ModuleA"/>
+    <FrameLayout
+        android:id="@+id/ft_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>
