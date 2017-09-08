@@ -1,45 +1,52 @@
 package com.dgcredit.componentdemo;
 
-import android.app.Activity;
-import android.databinding.DataBindingUtil;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.dgcredit.baselib.BaseActivity;
 import com.dgcredit.componentdemo.databinding.ActivitySecondBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SecondActivity extends AppCompatActivity {
 
-
-    private ActivitySecondBinding mBinding;
+public class SecondActivity extends BaseActivity<MainPresenter,ActivitySecondBinding> implements MainContract.MainView{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_second);
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_second);
-        initView();
-
+    public int getLayoutId() {
+        return  R.layout.activity_second;
     }
 
-    private void initView() {
+    @Override
+    public void initView() {
+        mPresenter.setData();
         List<Fragment> fragments = new ArrayList<>();
         fragments.add((Fragment) ARouter.getInstance().build("/modulea/fragment").navigation());
         fragments.add((Fragment) ARouter.getInstance().build("/moduleb/fragment").navigation());
         List<String> titles = new ArrayList<>();
         titles.add("ModuleA");
         titles.add("ModuleB");
-        mBinding.vp.setAdapter(new MyAdapter(getSupportFragmentManager(),fragments,titles));
-        mBinding.tabLayout.setupWithViewPager(mBinding.vp);
+        mViewBinding.vp.setAdapter(new MyAdapter(getSupportFragmentManager(),fragments,titles));
+        mViewBinding.tabLayout.setupWithViewPager(mViewBinding.vp);
     }
+
+    @Override
+    public void getData() {
+
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void dismissLoading() {
+
+    }
+
     private class  MyAdapter  extends FragmentStatePagerAdapter{
         private  List<Fragment> fragments;
         private List<String> titles;

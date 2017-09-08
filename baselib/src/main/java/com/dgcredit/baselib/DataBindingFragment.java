@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.trello.rxlifecycle2.components.support.RxFragment;
+
 /**
  * 类描述:
  * 创建人:aBen
@@ -18,7 +20,7 @@ import android.view.ViewGroup;
  * 备注:
  */
 
-public abstract class DataBindingFragment<B extends ViewDataBinding> extends Fragment {
+public abstract class DataBindingFragment<B extends ViewDataBinding> extends RxFragment  implements BaseView{
     public Context mContext;
     public B mViewBinding;
 //    public BaseStatusLayoutBinding mLoadDataBinding;
@@ -27,6 +29,7 @@ public abstract class DataBindingFragment<B extends ViewDataBinding> extends Fra
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 //        mLoadDataBinding = DataBindingUtil.inflate(inflater, R.layout.base_status_layout, container, false);
+
         mViewBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false);
         mContext = getActivity();
         initPresenter();

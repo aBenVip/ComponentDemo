@@ -19,6 +19,9 @@ dependencies {
 //        exclude module: 'rxjava'
 //        exclude module: 'dagger'
 //    }
+    compile(rootProject.ext.dependencies["rxlifecycle2"])
+    compile(rootProject.ext.dependencies["rxlifecycle2-components"])
+    compile(rootProject.ext.dependencies["annotations"])
 
     compile(rootProject.ext.dependencies["rxpermissions2"]) {
         exclude module: 'rxjava'
@@ -28,13 +31,13 @@ dependencies {
         exclude module: 'rxjava'
         exclude module: 'appcompat-v7'
     }
-  /*  compile(rootProject.ext.dependencies["rxbinding"]) {
-        exclude module: 'rxjava'
-    }
-    compile(rootProject.ext.dependencies["rxbinding-design"]) {
-        exclude module: 'rxjava'
-        exclude module: 'design'
-    }*/
+    /*  compile(rootProject.ext.dependencies["rxbinding"]) {
+          exclude module: 'rxjava'
+      }
+      compile(rootProject.ext.dependencies["rxbinding-design"]) {
+          exclude module: 'rxjava'
+          exclude module: 'design'
+      }*/
     /* compile(rootProject.ext.dependencies["rxcache-jolyglot-gson"]) {
          exclude module: 'gson'
      }*/

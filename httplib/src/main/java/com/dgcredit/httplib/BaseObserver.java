@@ -3,6 +3,7 @@ package com.dgcredit.httplib;
 import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.observers.DisposableObserver;
 
 /**
  * 类描述:
@@ -13,10 +14,6 @@ import io.reactivex.disposables.Disposable;
 
 public abstract class BaseObserver<T> implements Observer<T> {
 
-    private Object object;
-    public BaseObserver(Object object){
-        this.object= object;
-    }
     @Override
     public void onSubscribe(@NonNull Disposable d) {
 

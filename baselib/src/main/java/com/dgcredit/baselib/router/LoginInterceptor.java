@@ -1,4 +1,4 @@
-package com.dgcredit.baselib;
+package com.dgcredit.baselib.router;
 
 import android.content.Context;
 import android.util.Log;
@@ -7,6 +7,8 @@ import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Interceptor;
 import com.alibaba.android.arouter.facade.callback.InterceptorCallback;
 import com.alibaba.android.arouter.facade.template.IInterceptor;
+import com.alibaba.android.arouter.facade.template.IProvider;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 /**
  * 类描述:
@@ -20,6 +22,11 @@ import com.alibaba.android.arouter.facade.template.IInterceptor;
 public class LoginInterceptor implements IInterceptor {
     @Override
     public void process(Postcard postcard, InterceptorCallback callback) {
+        Log.i("TAG",postcard.toString());
+
+            ARouter.getInstance().build("/moduleb/b").navigation();
+//        callback.onInterrupt(null);
+
         callback.onContinue(postcard);// 处理完成，交还控制权
 //        callback.onInterrupt(new RuntimeException("我觉得有点异常"));//异常抛出，必须要实现一个
     }

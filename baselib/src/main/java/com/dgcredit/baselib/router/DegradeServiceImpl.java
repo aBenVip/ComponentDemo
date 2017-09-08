@@ -1,4 +1,4 @@
-package com.dgcredit.baselib;
+package com.dgcredit.baselib.router;
 
 import android.content.Context;
 import android.util.Log;

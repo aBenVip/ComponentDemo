@@ -7,12 +7,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.trello.rxlifecycle2.LifecycleTransformer;
+import com.trello.rxlifecycle2.RxLifecycle;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+
+import io.reactivex.ObservableTransformer;
 
 
 /**
  * activity基类
  */
-public abstract class DataBindingActivity<B extends ViewDataBinding> extends AppCompatActivity{
+public abstract class DataBindingActivity<B extends ViewDataBinding> extends RxAppCompatActivity implements BaseView{
     public Context mContext;
     public B mViewBinding;
 
