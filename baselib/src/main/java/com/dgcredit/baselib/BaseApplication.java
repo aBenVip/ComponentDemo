@@ -3,7 +3,6 @@ package com.dgcredit.baselib;
 import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-
 /**
  * 类描述:
  * 创建人:aBen

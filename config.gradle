@@ -25,6 +25,20 @@ ext {
 
     setDefaultConfig = {
         extension ->
+            extension.signingConfigs {
+                debug {
+                    keyAlias 'investment'
+                    keyPassword 'dagongp2pinvestment'
+                    storeFile file('D:/桌面/杂项/dgdujiangyan.jks')
+                    storePassword 'dagongsoft'
+                }
+                release {
+                    keyAlias 'investment'
+                    keyPassword 'dagongp2pinvestment'
+                    storeFile file('D:/桌面/杂项/dgdujiangyan.jks')
+                    storePassword 'dagongsoft'
+                }
+            }
             extension.compileSdkVersion android.compileSdkVersion
             extension.buildToolsVersion android.buildToolsVersion
             extension.defaultConfig {
@@ -52,8 +66,10 @@ ext {
             extension.buildTypes {
                 debug{
                     buildConfigField("String", "API_HOST", "${API_DEV_HOST}")
+                    signingConfig extension.signingConfigs.debug
                 }
                 release {
+                    signingConfig extension.signingConfigs.release
                     buildConfigField("String", "API_HOST", "${API_RELEASE_HOST}")
                     minifyEnabled false
                     proguardFiles extension.getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

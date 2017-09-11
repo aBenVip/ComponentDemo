@@ -6,24 +6,19 @@ if (IsBuildMudle.toBoolean()) {
 apply plugin: 'me.tatarka.retrolambda'
 android {
     rootProject.ext.setDefaultConfig android
-//    sourceSets {
-//        main {
-//            if (IsBuildMudle.toBoolean()) {
-//                manifest.srcFile 'src/main/module/AndroidManifest.xml'
-//            } else {
-//                manifest.srcFile 'src/main/AndroidManifest.xml'
-//                //集成开发模式下排除debug文件夹中的所有Java文件
-//                java {
-//                    exclude 'debug/**'
-//                }
-//            }
-//        }
-//    }
-//    resourcePrefix "share_"
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':baselib')
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    compile files('libs/SocialSDK_QQ_Simplify.jar')
+    compile files('libs/SocialSDK_Sina_Simplify.jar')
+    compile files('libs/SocialSDK_WeChat_Simplify.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_shareboard.jar')
+    compile files('libs/umeng_social_tool.jar')
+    compile files('libs/umeng_shareboard_widget.jar')
+    compile files('libs/umeng_social_shareview.jar')
 }
