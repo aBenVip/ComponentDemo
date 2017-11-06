@@ -1,7 +1,7 @@
 //正式环境
-def API_RELEASE_HOST = "\"https://www.silkroaditfin.com/dagongp2pms/\""
+def API_RELEASE_HOST = "\"www\""
 //开发环境
-def API_DEV_HOST = "\"http://172.16.21.91:8080/dagongp2pms/\""
+def API_DEV_HOST = "\"www\""
 ext {
     android = [
             compileSdkVersion: 25,
@@ -27,16 +27,10 @@ ext {
         extension ->
             extension.signingConfigs {
                 debug {
-                    keyAlias 'investment'
-                    keyPassword 'dagongp2pinvestment'
-                    storeFile file('D:/桌面/杂项/dgdujiangyan.jks')
-                    storePassword 'dagongsoft'
+
                 }
                 release {
-                    keyAlias 'investment'
-                    keyPassword 'dagongp2pinvestment'
-                    storeFile file('D:/桌面/杂项/dgdujiangyan.jks')
-                    storePassword 'dagongsoft'
+
                 }
             }
             extension.compileSdkVersion android.compileSdkVersion
@@ -65,8 +59,10 @@ ext {
             //配置构建方式
             extension.buildTypes {
                 debug{
+                    minifyEnabled false
                     buildConfigField("String", "API_HOST", "${API_DEV_HOST}")
                     signingConfig extension.signingConfigs.debug
+                    proguardFiles extension.getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
                 }
                 release {
                     signingConfig extension.signingConfigs.release

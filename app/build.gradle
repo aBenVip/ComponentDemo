@@ -10,6 +10,7 @@ dependencies {
         compile project(':modulea')
         compile project(':moduleb')
         compile project(':sharecomponent')
+        compile project(':wechatcomponent')
     } else {
         compile project(':baselib')
     }

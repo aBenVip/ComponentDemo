@@ -64,8 +64,6 @@ public class ShareServiceImpl implements ShareService {
          */
         @Override
         public void onResult(SHARE_MEDIA platform) {
-
-            Log.i("TAG","++++++++++++++++++++++chenggong");
             Toast.makeText(context,"成功了",Toast.LENGTH_LONG).show();
         }
 
