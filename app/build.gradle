@@ -1,24 +1,7 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'me.tatarka.retrolambda'
 android {
-
     rootProject.ext.setDefaultConfig android
-    defaultConfig {
-        applicationId "com.dgcredit.componentdemo"
-        //ARouter配置
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
-            }
-        }
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
 }
 
 dependencies {
@@ -27,9 +10,9 @@ dependencies {
         compile project(':modulea')
         compile project(':moduleb')
         compile project(':sharecomponent')
+        compile project(':wechatcomponent')
     } else {
         compile project(':baselib')
     }
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
-
 }

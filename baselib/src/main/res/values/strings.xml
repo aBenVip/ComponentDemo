@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">baseLib</string>
+    <string name="custom_app_name">custom</string>
 </resources>

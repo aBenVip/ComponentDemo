@@ -1,0 +1,14 @@
+if (IsBuildMudle.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'me.tatarka.retrolambda'
+android {
+    rootProject.ext.setDefaultConfig android
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':baselib')
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+}

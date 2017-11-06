@@ -1,6 +1,6 @@
 package debug;
 
-import android.app.Application;
+import com.dgcredit.baselib.BaseApplication;
 
 /**
  * 类描述:
@@ -9,5 +9,5 @@ import android.app.Application;
  * 备注:
  */
 
-public class BModuleApplication extends Application {
+public class BModuleApplication extends BaseApplication {
 }

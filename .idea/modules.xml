@@ -5,10 +5,13 @@
       <module fileurl="file://$PROJECT_DIR$/ComponentDemo.iml" filepath="$PROJECT_DIR$/ComponentDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselib/baselib.iml" filepath="$PROJECT_DIR$/baselib/baselib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customcomponent/customcomponent.iml" filepath="$PROJECT_DIR$/customcomponent/customcomponent.iml" />
       <module fileurl="file://$PROJECT_DIR$/httplib/httplib.iml" filepath="$PROJECT_DIR$/httplib/httplib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logincomponent/logincomponent.iml" filepath="$PROJECT_DIR$/logincomponent/logincomponent.iml" />
       <module fileurl="file://$PROJECT_DIR$/modulea/modulea.iml" filepath="$PROJECT_DIR$/modulea/modulea.iml" />
       <module fileurl="file://$PROJECT_DIR$/moduleb/moduleb.iml" filepath="$PROJECT_DIR$/moduleb/moduleb.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharecomponent/sharecomponent.iml" filepath="$PROJECT_DIR$/sharecomponent/sharecomponent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wechatcomponent/wechatcomponent.iml" filepath="$PROJECT_DIR$/wechatcomponent/wechatcomponent.iml" />
     </modules>
   </component>
 </project>

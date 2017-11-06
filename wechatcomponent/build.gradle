@@ -1,0 +1,15 @@
+if (IsBuildMudle.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'me.tatarka.retrolambda'
+android {
+    rootProject.ext.setDefaultConfig android
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':baselib')
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.4.0'
+}

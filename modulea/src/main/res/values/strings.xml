@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">moduleA</string>
+    <string name="modulea_app_name">moduleA</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="modulea_hello_blank_fragment">Hello blank fragment</string>
 </resources>
