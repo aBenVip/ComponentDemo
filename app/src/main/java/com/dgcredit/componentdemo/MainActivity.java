@@ -16,12 +16,11 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.dgcredit.baselib.DataBindingActivity;
 import com.dgcredit.baselib.ShareService;
 import com.dgcredit.componentdemo.databinding.ActivityMainBinding;
-import com.umeng.socialize.UmengTool;
 
 public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
 
-    @Autowired(name = "/share/service")
-    ShareService shareService;
+//    @Autowired(name = "/share/service")
+//    ShareService shareService;
 
     @Override
     public int getLayoutId() {
@@ -48,7 +47,7 @@ public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
 
     public void shareComponent() {
 //        ARouter.getInstance().build("/share/component").navigation();
-        shareService.share(this);
+//        shareService.share(this);
     }
 
     @Override
@@ -64,6 +63,6 @@ public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        shareService.onActivityResult(this,requestCode, resultCode, data);
+//        shareService.onActivityResult(this,requestCode, resultCode, data);
     }
 }

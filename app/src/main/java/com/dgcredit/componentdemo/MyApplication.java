@@ -14,14 +14,14 @@ import com.dgcredit.baselib.service.ShareApplicationService;
 
 public class MyApplication extends BaseApplication {
 
-    @Autowired(name = "/share/application/service")
-    ShareApplicationService shareApplicationService;
+//    @Autowired(name = "/share/application/service")
+//    ShareApplicationService shareApplicationService;
 
     @Override
     public void onCreate() {
         super.onCreate();
         ARouter.getInstance().inject(this);
-        shareApplicationService.initShare(this);
+//        shareApplicationService.initShare(this);
 //        Config.DEBUG = true;
 //        UMShareAPI.get(this);
     }
